@@ -50,17 +50,16 @@ export async function getStaticProps() {
   client.close();
 
   // Tudo isso por conta do id que vem num formatinho diferente, senão não seria necessário mapear o array.
-  const meetupsData = meetups.map((meetup) => ({
-    title: meetup.title,
-    address: meetup.address,
-    image: meetup.image,
-    description: meetup.description,
-    id: meetup._id.toString(),
-  }));
 
   return {
     props: {
-      meetups: meetupsData,
+      meetups: meetups.map((meetup) => ({
+        title: meetup.title,
+        address: meetup.address,
+        image: meetup.image,
+        description: meetup.description,
+        id: meetup._id.toString(),
+      })),
     },
     revalidate: 1,
   };

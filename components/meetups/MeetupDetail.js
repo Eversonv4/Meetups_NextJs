@@ -1,8 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
 import classes from "./MeetupDetail.module.css";
-import { useRouter } from "next/router";
-import LoadAnimation from "../ui/loading-animation";
-import { LoadMeetups } from "../helpers/loadMeetups";
 
 export default function MeetupDetail(props) {
   return (
